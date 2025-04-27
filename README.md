@@ -1,5 +1,7 @@
 # 🦫 bhvr
 
+![cover](https://bhvr.dev/og.png)
+
 A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vite, and React
 
 ## Features
