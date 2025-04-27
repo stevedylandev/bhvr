@@ -28,7 +28,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  a:nth-of-type(1) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
@@ -45,4 +45,10 @@
   background: #444444;
   border-radius: 15px;
   padding: 2rem;
+}
+
+.code {
+  text-align: start;
+  max-width: 500px;
+  margin: auto;
 }

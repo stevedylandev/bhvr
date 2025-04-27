@@ -1,4 +1,4 @@
-# bhvr
+# 🦫 bhvr
 
 A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vite, and React
 
@@ -61,7 +61,7 @@ bun run build:client  # Build the React frontend
 Types are automatically shared between the client and server thanks to the shared package and TypeScript path aliases. You can import them in your code using:
 
 ```typescript
-import { User, Document } from '@shared/types';
+import { ApiResponse } from '@shared/types';
 ```
 
 ## Learn More

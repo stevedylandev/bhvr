@@ -21,12 +21,13 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://github.com/stevedylandev/bhvr" target="_blank">
           <img src={beaver} className="logo" alt="beaver logo" />
         </a>
       </div>
-      <h1>BHVR</h1>
-      <h3>Bun + Hono + Vite + React</h3>
+      <h1>bhvr</h1>
+      <h2>Bun + Hono + Vite + React</h2>
+      <p>A typesafe fullstack monorepo</p>
       <div className="card">
         <button onClick={sendRequest}>
           Call API
@@ -39,12 +40,21 @@ function App() {
             </code>
           </pre>
         )}
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <pre className='code'>
+          <code>
+{`
+  .
+  ├── client/               # React frontend
+  ├── server/               # Hono backend
+  ├── shared/               # Shared TypeScript definitions
+  │   └── src/types/        # Type definitions used by both client and server
+  └── package.json          # Root package.json with workspaces
+`}
+          </code>
+        </pre>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Click the beaver to learn more
       </p>
     </>
   )
