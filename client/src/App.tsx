@@ -3,12 +3,14 @@ import beaver from './assets/beaver.svg'
 import { ApiResponse } from 'shared'
 import './App.css'
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3000"
+
 function App() {
   const [data, setData] = useState<ApiResponse | undefined>()
 
   async function sendRequest() {
     try {
-      const req = await fetch(`${import.meta.env.VITE_SERVER_URL}/hello`)
+      const req = await fetch(`${SERVER_URL}/hello`)
       const res: ApiResponse = await req.json()
       setData(res)
     } catch (error) {
