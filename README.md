@@ -1,8 +1,12 @@
-# 🦫 bhvr
+# bhvr 🦫
 
-![cover](https://bhvr.dev/og.png)
+![cover](https://cdn.stevedylan.dev/ipfs/bafybeievx27ar5qfqyqyud7kemnb5n2p4rzt2matogi6qttwkpxonqhra4)
 
 A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vite, and React
+
+## Why bhvr?
+
+While there are plenty of existing app building stacks out there, many of them are either bloated, outdated, or have too much of a vendor lock-in. bhvr is built with the opinion that you should be able to deploy your client or server in any enviorment while also keeping type saftey.
 
 ## Features
 
@@ -57,6 +61,21 @@ bun run build
 bun run build:shared  # Build the shared types package
 bun run build:client  # Build the React frontend
 ```
+
+### Deployment
+
+Deplying each piece is very versatile and can be done numerous ways, and exploration into automating these will happen at a later date. Here are some references in the meantime.
+
+**Client**
+- [Orbiter](https://orbiter.host)
+- [GitHub Pages](https://vite.dev/guide/static-deploy.html#github-pages)
+- [Netlify](https://vite.dev/guide/static-deploy.html#netlify)
+- [Cloudflare Pages](https://vite.dev/guide/static-deploy.html#cloudflare-pages)
+
+**Server**
+- [Cloudflare Worker](https://gist.github.com/stevedylandev/4aa1fc569bcba46b7169193c0498d0b3)
+- [Bun](https://hono.dev/docs/getting-started/bun)
+- [Node.js](https://hono.dev/docs/getting-started/nodejs)
 
 ## Type Sharing
 
