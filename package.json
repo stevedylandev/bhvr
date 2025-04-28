@@ -9,9 +9,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "bun run --filter './packages/**' dev",
+    "dev": "bun run --filter={client,server} dev",
+    "dev:client": "bun run --filter 'client' dev",
+    "dev:server": "bun run --filter 'server' dev",
+    "dev:types": "bun run --filter 'shared' dev",
+    "build:client": "bun run --filter 'client' build",
+    "build:shared": "bun run --filter 'shared' build",
     "build": "bun run --filter '*' build",
-    "postinstall": "bun --filter shared build"
+    "postinstall": "bun --filter 'shared' build"
   },
   "keywords": [
     "bun",
@@ -21,8 +26,7 @@
     "monorepo"
   ],
   "devDependencies": {
-    "bun-types": "latest",
-    "concurrently": "^8.0.0"
+    "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
