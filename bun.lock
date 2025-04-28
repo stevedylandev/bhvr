@@ -11,9 +11,9 @@
         "typescript": "^5.0.0",
       },
     },
-    "client": {
+    "packages/client": {
       "name": "client",
-      "version": "0.0.0",
+      "version": "0.0.1",
       "dependencies": {
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -34,8 +34,9 @@
         "vite": "^6.3.1",
       },
     },
-    "server": {
+    "packages/server": {
       "name": "server",
+      "version": "0.0.1",
       "dependencies": {
         "hono": "^4.7.7",
         "shared": "workspace:*",
@@ -44,9 +45,9 @@
         "@types/bun": "latest",
       },
     },
-    "shared": {
+    "packages/shared": {
       "name": "shared",
-      "version": "0.1.0",
+      "version": "0.0.1",
       "devDependencies": {
         "typescript": "^5.2.2",
       },
@@ -291,7 +292,7 @@
 
     "chalk": ["chalk@4.1.2", "", { "dependencies": { "ansi-styles": "^4.1.0", "supports-color": "^7.1.0" } }, "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="],
 
-    "client": ["client@workspace:client"],
+    "client": ["client@workspace:packages/client"],
 
     "cliui": ["cliui@8.0.1", "", { "dependencies": { "string-width": "^4.2.0", "strip-ansi": "^6.0.1", "wrap-ansi": "^7.0.0" } }, "sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ=="],
 
@@ -487,9 +488,9 @@
 
     "semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
 
-    "server": ["server@workspace:server"],
+    "server": ["server@workspace:packages/server"],
 
-    "shared": ["shared@workspace:shared"],
+    "shared": ["shared@workspace:packages/shared"],
 
     "shebang-command": ["shebang-command@2.0.0", "", { "dependencies": { "shebang-regex": "^3.0.0" } }, "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="],
 
