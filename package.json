@@ -28,8 +28,7 @@
     "monorepo"
   ],
   "devDependencies": {
-    "bun-types": "latest",
-    "concurrently": "^8.0.0"
+    "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
