@@ -32,6 +32,14 @@ While there are plenty of existing app building stacks out there, many of them a
 
 ## Getting Started
 
+### Quick Start
+
+You can start a new bhvr project using the [CLI](https://github.com/stevedylandev/create-bhvr)
+
+```bash
+bun create bhvr
+```
+
 ### Installation
 
 ```bash
