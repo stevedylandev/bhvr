@@ -38,6 +38,11 @@ While there are plenty of existing app building stacks out there, many of them a
 # Install dependencies for all workspaces
 bun install
 ```
+### Create Project
+
+```bash
+bun create bhvr@latest
+```
 
 ### Development
 
