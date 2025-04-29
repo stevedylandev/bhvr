@@ -30,6 +30,153 @@ While there are plenty of existing app building stacks out there, many of them a
 └── package.json          # Root package.json with workspaces
 ```
 
+### Server
+
+bhvr uses Hono as a backend API for it's simplicity and massive ecosystem of plugins. If you have ever used Express then it might feel familiar. Declaring routes and returning data is easy.
+
+```
+server
+├── bun.lock
+├── package.json
+├── README.md
+├── src
+│   └── index.ts
+└── tsconfig.json
+```
+
+```typescript src/index.ts
+import { Hono } from 'hono'
+import { cors } from 'hono/cors'
+import type { ApiResponse } from 'shared/dist'
+
+const app = new Hono()
+
+app.use(cors())
+
+app.get('/', (c) => {
+  return c.text('Hello Hono!')
+})
+
+app.get('/hello', async (c) => {
+
+  const data: ApiResponse = {
+    message: "Hello BHVR!",
+    success: true
+  }
+
+  return c.json(data, { status: 200 })
+})
+
+export default app
+```
+
+If you wanted to add a database to Hono you can do so with a multitude of Typescript libraries like [Supabase](https://supabase.com), or ORMs like [Drizzle](https://orm.drizzle.team/docs/get-started) or [Prisma](https://www.prisma.io/orm)
+
+### Client
+
+bhvr uses Vite + React Typescript template, which means you can build your frontend just as you would with any other React app. This makes it flexible to add UI components like [shadcn/ui](https://ui.shadcn.com) or routing using [React Router](https://reactrouter.com/start/declarative/installation).
+
+```
+client
+├── eslint.config.js
+├── index.html
+├── package.json
+├── public
+│   └── vite.svg
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── assets
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+```typescript src/App.tsx
+import { useState } from 'react'
+import beaver from './assets/beaver.svg'
+import { ApiResponse } from 'shared'
+import './App.css'
+
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3000"
+
+function App() {
+  const [data, setData] = useState<ApiResponse | undefined>()
+
+  async function sendRequest() {
+    try {
+      const req = await fetch(`${SERVER_URL}/hello`)
+      const res: ApiResponse = await req.json()
+      setData(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return (
+    <>
+      <div>
+        <a href="https://github.com/stevedylandev/bhvr" target="_blank">
+          <img src={beaver} className="logo" alt="beaver logo" />
+        </a>
+      </div>
+      <h1>bhvr</h1>
+      <h2>Bun + Hono + Vite + React</h2>
+      <p>A typesafe fullstack monorepo</p>
+      <div className="card">
+        <button onClick={sendRequest}>
+          Call API
+        </button>
+        {data && (
+          <pre className='response'>
+            <code>
+            Message: {data.message} <br />
+            Success: {data.success.toString()}
+            </code>
+          </pre>
+        )}
+      </div>
+      <p className="read-the-docs">
+        Click the beaver to learn more
+      </p>
+    </>
+  )
+}
+
+export default App
+```
+
+### Shared
+
+The Shared package is used for anything you want to share between the Server and Client. This could be types or libraries that you use in both the enviorments.
+
+```
+shared
+├── package.json
+├── src
+│   ├── index.ts
+│   └── types
+│       └── index.ts
+└── tsconfig.json
+```
+
+Inside the `src/index.ts` we export any of our code from the folders so it's usabe in other parts of the monorepo
+
+```typescript
+export * from "./types"
+```
+
+By running `bun run dev` or `bun run build` it will compile and export the packages from `shared` so it can be used in either `client` or `server`
+
+```typescript
+import { ApiResponse } from 'shared'
+```
+
 ## Getting Started
 
 ### Quick Start
