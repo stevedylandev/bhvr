@@ -6,7 +6,7 @@ A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vit
 
 ## Why bhvr?
 
-While there are plenty of existing app building stacks out there, many of them are either bloated, outdated, or have too much of a vendor lock-in. bhvr is built with the opinion that you should be able to deploy your client or server in any enviorment while also keeping type saftey.
+While there are plenty of existing app building stacks out there, many of them are either bloated, outdated, or have too much of a vendor lock-in. bhvr is built with the opinion that you should be able to deploy your client or server in any environment while also keeping type saftey.
 
 ## Features
 
