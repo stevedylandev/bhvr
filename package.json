@@ -1,6 +1,6 @@
 {
   "name": "bhvr",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "description": "A monorepo template built with Bun, Hono, Vite, and React",
   "author": "Steve Simkins",
   "license": "MIT",
