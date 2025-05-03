@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import beaver from './assets/beaver.svg'
 import { ApiResponse } from 'shared'
+import { Button } from './components/ui/button'
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3000"
 
@@ -29,12 +30,11 @@ function App() {
       <h1 className="text-5xl font-black">bhvr</h1>
       <h2 className="text-2xl font-bold">Bun + Hono + Vite + React</h2>
       <p>A typesafe fullstack monorepo</p>
-        <button
+        <Button
           onClick={sendRequest}
-          className="bg-black text-white px-2.5 py-1.5 rounded-md"
         >
           Call API
-        </button>
+        </Button>
         {data && (
           <pre className="bg-gray-100 p-4 rounded-md">
             <code>
