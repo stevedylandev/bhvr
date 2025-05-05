@@ -6,7 +6,7 @@ A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vit
 
 ## Why bhvr?
 
-While there are plenty of existing app building stacks out there, many of them are either bloated, outdated, or have too much of a vendor lock-in. bhvr is built with the opinion that you should be able to deploy your client or server in any environment while also keeping type saftey.
+While there are plenty of existing app building stacks out there, many of them are either bloated, outdated, or have too much of a vendor lock-in. bhvr is built with the opinion that you should be able to deploy your client or server in any environment while also keeping type safety.
 
 ## Features
 
@@ -32,7 +32,7 @@ While there are plenty of existing app building stacks out there, many of them a
 
 ### Server
 
-bhvr uses Hono as a backend API for it's simplicity and massive ecosystem of plugins. If you have ever used Express then it might feel familiar. Declaring routes and returning data is easy.
+bhvr uses Hono as a backend API for its simplicity and massive ecosystem of plugins. If you have ever used Express then it might feel familiar. Declaring routes and returning data is easy.
 
 ```
 server
@@ -153,7 +153,7 @@ export default App
 
 ### Shared
 
-The Shared package is used for anything you want to share between the Server and Client. This could be types or libraries that you use in both the enviorments.
+The Shared package is used for anything you want to share between the Server and Client. This could be types or libraries that you use in both environments.
 
 ```
 shared
@@ -165,7 +165,7 @@ shared
 └── tsconfig.json
 ```
 
-Inside the `src/index.ts` we export any of our code from the folders so it's usabe in other parts of the monorepo
+Inside the `src/index.ts` we export any of our code from the folders so it's usable in other parts of the monorepo
 
 ```typescript
 export * from "./types"
@@ -237,7 +237,7 @@ Deplying each piece is very versatile and can be done numerous ways, and explora
 Types are automatically shared between the client and server thanks to the shared package and TypeScript path aliases. You can import them in your code using:
 
 ```typescript
-import { ApiResponse } from '@shared/types';
+import { ApiResponse } from 'shared/types';
 ```
 
 ## Learn More
