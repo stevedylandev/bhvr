@@ -17,8 +17,9 @@
     "dev": "concurrently \"bun run dev:shared\" \"bun run dev:server\" \"bun run dev:client\"",
     "build:client": "cd client && bun run build",
     "build:shared": "cd shared && bun run build",
+    "build:server": "cd server && bun run build",
     "build": "bun run build:shared && bun run build:client",
-    "postinstall": "bun run build:shared"
+    "postinstall": "bun run build:shared && bun run build:server"
   },
   "keywords": [
     "bun",
