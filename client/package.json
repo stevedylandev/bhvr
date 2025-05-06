@@ -14,6 +14,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "shared": "workspace:*",
+    "server": "workspace:*",
     "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
