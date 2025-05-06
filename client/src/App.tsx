@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import beaver from './assets/beaver.svg'
-import { ApiResponse } from 'shared'
+import type { ApiResponse } from 'shared'
 import './App.css'
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3000"
@@ -29,9 +29,12 @@ function App() {
       <h2>Bun + Hono + Vite + React</h2>
       <p>A typesafe fullstack monorepo</p>
       <div className="card">
-        <button onClick={sendRequest}>
-          Call API
-        </button>
+        <div className='button-container'>
+          <button onClick={sendRequest}>
+            Call API
+          </button>
+          <a className='docs-link' target='_blank' href="https://bhvr.dev">Docs</a>
+        </div>
         {data && (
           <pre className='response'>
             <code>
@@ -40,22 +43,7 @@ function App() {
             </code>
           </pre>
         )}
-        <pre className='code'>
-          <code>
-{`
-  .
-  ├── client/               # React frontend
-  ├── server/               # Hono backend
-  ├── shared/               # Shared TypeScript definitions
-  │   └── src/types/        # Type definitions used by both client and server
-  └── package.json          # Root package.json with workspaces
-`}
-          </code>
-        </pre>
       </div>
-      <p className="read-the-docs">
-        Click the beaver to learn more
-      </p>
     </>
   )
 }
