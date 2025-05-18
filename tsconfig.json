@@ -9,11 +9,11 @@
     "allowJs": true,
 
     // Path resolution
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@server/*": ["./server/src/*"],
-      "@client/*": ["./client/src/*"],
-      "@shared/*": ["./shared/src/*"]
+      "@server/*": ["packages/server/src/*"],
+      "@client/*": ["packages/client/src/*"],
+      "@shared/*": ["packages/shared/src/*"]
     },
 
     // Module resolution
