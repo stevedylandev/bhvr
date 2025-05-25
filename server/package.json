@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun --watch run src/index.ts"
   },
   "dependencies": {
     "hono": "^4.7.7",
