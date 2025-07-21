@@ -2,7 +2,7 @@
 
 ![cover](https://cdn.stevedylan.dev/ipfs/bafybeievx27ar5qfqyqyud7kemnb5n2p4rzt2matogi6qttwkpxonqhra4)
 
-A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vite, React, and Turbo
+A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vite, and React.
 
 ## Why bhvr?
 
@@ -14,7 +14,7 @@ While there are plenty of existing app building stacks out there, many of them a
 - **Shared Types**: Common type definitions shared between client and server
 - **Monorepo Structure**: Organized as a workspaces-based monorepo with Turbo for build orchestration
 - **Modern Stack**:
-  - [Bun](https://bun.sh) as the JavaScript runtime
+  - [Bun](https://bun.sh) as the JavaScript runtime and package manager
   - [Hono](https://hono.dev) as the backend framework
   - [Vite](https://vitejs.dev) for frontend bundling
   - [React](https://react.dev) for the frontend UI
@@ -29,7 +29,7 @@ While there are plenty of existing app building stacks out there, many of them a
 ├── shared/               # Shared TypeScript definitions
 │   └── src/types/        # Type definitions used by both client and server
 ├── package.json          # Root package.json with workspaces
-└── turbo.json           # Turbo configuration for build orchestration
+└── turbo.json            # Turbo configuration for build orchestration
 ```
 
 ### Server
@@ -203,9 +203,8 @@ bun install
 bun run dev
 
 # Or run individual workspaces directly
-cd client && bun run dev    # Run the Vite dev server for React
-cd server && bun run dev    # Run the Hono backend
-cd shared && bun run dev    # Watch and compile shared types
+bun run dev:client    # Run the Vite dev server for React
+bun run dev:server    # Run the Hono backend
 ```
 
 ### Building
@@ -215,9 +214,8 @@ cd shared && bun run dev    # Watch and compile shared types
 bun run build
 
 # Or build individual workspaces directly
-cd shared && bun run build  # Build the shared types package
-cd server && bun run build  # Build the Hono backend
-cd client && bun run build  # Build the React frontend
+bun run build:client  # Build the React frontend
+bun run build:server  # Build the Hono backend
 ```
 
 ### Additional Commands
