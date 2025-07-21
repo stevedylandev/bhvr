@@ -8,25 +8,16 @@
 	"packageManager": "bun@1.2.4",
 	"workspaces": ["./server", "./client", "./shared"],
 	"scripts": {
-		"dev:client": "cd client && bun run dev",
-		"dev:server": "cd server && bun run dev",
-		"dev:shared": "cd shared && bun run dev",
 		"dev": "turbo dev",
-		"build:client": "cd client && bun run build",
-		"build:shared": "cd shared && bun run build",
-		"build:server": "cd server && bun run build",
-		"build": "bun run build:shared && bun run build:server && bun run build:client",
-		"postinstall": "bun run build:shared && bun run build:server",
-		"turbo:build": "turbo build",
-		"turbo:dev": "turbo dev",
-		"turbo:lint": "turbo lint",
-		"turbo:type-check": "turbo type-check",
-		"turbo:test": "turbo test"
+		"build": "turbo build",
+		"lint": "turbo lint",
+		"type-check": "turbo type-check",
+		"test": "turbo test",
+		"postinstall": "turbo build --filter=shared --filter=server"
 	},
-	"keywords": ["bun", "hono", "react", "vite", "monorepo"],
+	"keywords": ["bun", "hono", "react", "vite", "monorepo", "turbo"],
 	"devDependencies": {
 		"bun-types": "latest",
-		"concurrently": "^9.1.2",
 		"turbo": "^2.5.5"
 	},
 	"peerDependencies": {
