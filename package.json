@@ -1,28 +1,41 @@
 {
-	"name": "bhvr",
-	"version": "0.3.1",
-	"description": "A monorepo template built with Bun, Hono, Vite, and React",
-	"author": "Steve Simkins",
-	"license": "MIT",
-	"homepage": "https://github.com/stevedylandev/bhvr",
-	"workspaces": ["./server", "./client", "./shared"],
-	"scripts": {
-		"dev:client": "cd client && bun run dev",
-		"dev:server": "cd server && bun run dev",
-		"dev:shared": "cd shared && bun run dev",
-		"dev": "concurrently \"bun run dev:shared\" \"bun run dev:server\" \"bun run dev:client\"",
-		"build:client": "cd client && bun run build",
-		"build:shared": "cd shared && bun run build",
-		"build:server": "cd server && bun run build",
-		"build": "bun run build:shared && bun run build:server && bun run build:client",
-		"postinstall": "bun run build:shared && bun run build:server"
-	},
-	"keywords": ["bun", "hono", "react", "vite", "monorepo"],
-	"devDependencies": {
-		"bun-types": "latest",
-		"concurrently": "^9.1.2"
-	},
-	"peerDependencies": {
-		"typescript": "^5.7.3"
-	}
+  "name": "bhvr",
+  "version": "0.4.0",
+  "description": "A monorepo template built with Bun, Hono, Vite, and React",
+  "author": "Steve Simkins",
+  "license": "MIT",
+  "homepage": "https://github.com/stevedylandev/bhvr",
+  "packageManager": "bun@1.2.4",
+  "workspaces": [
+    "./server",
+    "./client",
+    "./shared"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:client": "turbo dev --filter=client",
+    "dev:server": "turbo dev --filter=server",
+    "build": "turbo build",
+    "build:client": "turbo build --filter=client",
+    "build:server": "turbo build --filter=server",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "test": "turbo test",
+    "postinstall": "turbo build --filter=shared --filter=server"
+  },
+  "keywords": [
+    "bun",
+    "hono",
+    "react",
+    "vite",
+    "monorepo",
+    "turbo"
+  ],
+  "devDependencies": {
+    "bun-types": "latest",
+    "turbo": "^2.5.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.3"
+  }
 }
