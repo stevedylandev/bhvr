@@ -5,22 +5,29 @@
 	"author": "Steve Simkins",
 	"license": "MIT",
 	"homepage": "https://github.com/stevedylandev/bhvr",
+	"packageManager": "bun@1.2.4",
 	"workspaces": ["./server", "./client", "./shared"],
 	"scripts": {
 		"dev:client": "cd client && bun run dev",
 		"dev:server": "cd server && bun run dev",
 		"dev:shared": "cd shared && bun run dev",
-		"dev": "concurrently \"bun run dev:shared\" \"bun run dev:server\" \"bun run dev:client\"",
+		"dev": "turbo dev",
 		"build:client": "cd client && bun run build",
 		"build:shared": "cd shared && bun run build",
 		"build:server": "cd server && bun run build",
 		"build": "bun run build:shared && bun run build:server && bun run build:client",
-		"postinstall": "bun run build:shared && bun run build:server"
+		"postinstall": "bun run build:shared && bun run build:server",
+		"turbo:build": "turbo build",
+		"turbo:dev": "turbo dev",
+		"turbo:lint": "turbo lint",
+		"turbo:type-check": "turbo type-check",
+		"turbo:test": "turbo test"
 	},
 	"keywords": ["bun", "hono", "react", "vite", "monorepo"],
 	"devDependencies": {
 		"bun-types": "latest",
-		"concurrently": "^9.1.2"
+		"concurrently": "^9.1.2",
+		"turbo": "^2.5.5"
 	},
 	"peerDependencies": {
 		"typescript": "^5.7.3"

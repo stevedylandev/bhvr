@@ -39,3 +39,6 @@ pnpm-debug.log*
 
 # Bun
 bun.lockb
+
+# Turbo
+.turbo
