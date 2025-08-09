@@ -8,6 +8,30 @@ A full-stack TypeScript monorepo starter with shared types, using Bun, Hono, Vit
 
 While there are plenty of existing app building stacks out there, many of them are either bloated, outdated, or have too much of a vendor lock-in. bhvr is built with the opinion that you should be able to deploy your client or server in any environment while also keeping type safety.
 
+## Quickstart
+
+Make sure [bun](https://bun.sh) is installed
+
+```bash
+bun --version
+```
+
+Run the command below to make a new bhvr project
+
+```bash
+bun create bhvr@latest my-app
+```
+
+Once complete run the dev server
+
+```bash
+cd my-app
+bun dev
+```
+
+> [!NOTE]
+> Visit [bhvr.dev](https://bhvr.dev) for the full documentation!
+
 ## Features
 
 - **Full-Stack TypeScript**: End-to-end type safety between client and server
@@ -236,15 +260,16 @@ bun run test
 Deplying each piece is very versatile and can be done numerous ways, and exploration into automating these will happen at a later date. Here are some references in the meantime.
 
 **Client**
-- [Orbiter](https://orbiter.host)
-- [GitHub Pages](https://vite.dev/guide/static-deploy.html#github-pages)
-- [Netlify](https://vite.dev/guide/static-deploy.html#netlify)
-- [Cloudflare Pages](https://vite.dev/guide/static-deploy.html#cloudflare-pages)
+- [Orbiter](https://bhvr.dev/deployment/client/orbiter)
+- [GitHub Pages](https://bhvr.dev/deployment/client/github-pages)
+- [Netlify](https://bhvr.dev/deployment/client/netlify)
+- [Cloudflare Pages](https://bhvr.dev/deployment/client/cloudflare-pages)
 
 **Server**
-- [Cloudflare Worker](https://gist.github.com/stevedylandev/4aa1fc569bcba46b7169193c0498d0b3)
-- [Bun](https://hono.dev/docs/getting-started/bun)
-- [Node.js](https://hono.dev/docs/getting-started/nodejs)
+- [Orbiter](https://bhvr.dev/deployment/server/orbiter)
+- [Cloudflare Worker](https://bhvr.dev/deployment/server/cloudflare-workers)
+- [Bun](https://bhvr.dev/deployment/server/railway)
+- [Node.js](https://bhvr.dev/deployment/server/railway)
 
 ## Type Sharing
 
@@ -256,6 +281,7 @@ import { ApiResponse } from 'shared/types';
 
 ## Learn More
 
+- [bhvr Documentation](https://bhvr.dev)
 - [Bun Documentation](https://bun.sh/docs)
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [React Documentation](https://react.dev/learn)
