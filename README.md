@@ -49,7 +49,7 @@ server
 ```typescript src/index.ts
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import type { ApiResponse } from 'shared/dist'
+import type { ApiResponse } from 'shared'
 
 const app = new Hono()
 
